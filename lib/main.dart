@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
-      home: ,
+      home: Scaffold(body: Center(child: Text('Hello World!'))),
     );
   }
 }
