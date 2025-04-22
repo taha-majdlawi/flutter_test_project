@@ -21,3 +21,13 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/drawer.png
+  
+
+
+
+  fonts:
+    - family: Public Sans
+      fonts:
+        - asset: assets/fonts/PublicSans-Regular.ttf
+      
+       

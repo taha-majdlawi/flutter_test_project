@@ -13,6 +13,7 @@ class CustomOrderNumberText extends StatelessWidget {
             color: Color(0xff5000B9),
             fontWeight: FontWeight.w600,
             fontSize: 16,
+            fontFamily: 'Public Sans',
           ),
         ),
         Text(
@@ -21,6 +22,7 @@ class CustomOrderNumberText extends StatelessWidget {
             color: Color(0xff006B83),
             fontWeight: FontWeight.w600,
             fontSize: 16,
+            fontFamily: 'Public Sans',
           ),
         ),
       ],
