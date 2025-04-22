@@ -15,6 +15,7 @@ class CustomTextFeilds extends StatelessWidget {
             ),
           ),
           child: TextField(
+            textAlign: TextAlign.center,
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Color(0xff006B83), width: 1),
