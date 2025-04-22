@@ -11,7 +11,13 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [CustomAppBar(), LeftCustomTextFeild()]),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomAppBar(),
+          LeftCustomTextFeild(),
+        ],
+      ),
     );
   }
 }

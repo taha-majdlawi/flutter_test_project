@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class LeftCustomTextFeild extends StatelessWidget {
@@ -11,21 +10,20 @@ class LeftCustomTextFeild extends StatelessWidget {
         Flexible(
           child: Container(
             width: MediaQuery.of(context).size.width * 0.1,
+            decoration: BoxDecoration(
+              border: Border(
+                right: BorderSide(color: Color(0xff006B83), width: 2),
+              ),
+            ),
             child: TextField(
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xff006B83),
-                    width: 2,
-                  ), // line color
+                  borderSide: BorderSide(color: Color(0xff006B83), width: 2),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xff006B83),
-                    width: 2,
-                  ), // line on focus
+                  borderSide: BorderSide(color: Color(0xff006B83), width: 2),
                 ),
-                border: InputBorder.none, // removes border
+                border: InputBorder.none,
               ),
             ),
           ),
