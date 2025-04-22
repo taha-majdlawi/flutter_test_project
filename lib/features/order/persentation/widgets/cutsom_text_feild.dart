@@ -11,16 +11,16 @@ class CustomTextFeilds extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.15,
           decoration: BoxDecoration(
             border: Border(
-              right: BorderSide(color: Color(0xff006B83), width: 2),
+              right: BorderSide(color: Color(0xff006B83), width: 1),
             ),
           ),
           child: TextField(
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Color(0xff006B83), width: 2),
+                borderSide: BorderSide(color: Color(0xff006B83), width: 1),
               ),
               focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Color(0xff006B83), width: 2),
+                borderSide: BorderSide(color: Color(0xff006B83), width: 1),
               ),
               border: InputBorder.none,
             ),
@@ -31,10 +31,10 @@ class CustomTextFeilds extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff006B83), width: 2),
+                  borderSide: BorderSide(color: Color(0xff006B83), width: 1),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff006B83), width: 2),
+                  borderSide: BorderSide(color: Color(0xff006B83), width: 1),
                 ),
                 border: InputBorder.none,
               ),
