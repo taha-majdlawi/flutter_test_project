@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_test_project/core/utils/assets.dart';
 
 class OrderScreen extends StatelessWidget {
@@ -6,7 +7,7 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(children: [CustomAppBar()]));
+    return SafeArea(child: Scaffold(body: Column(children: [CustomAppBar()])));
   }
 }
 
@@ -15,6 +16,14 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [Image.asset(AppAssets.logo)]);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 17.0),
+      child: Row(
+        children: [
+          Image.asset(AppAssets.drawer, width: 24, height: 24),
+          Image.asset(AppAssets.logo, width: 24, height: 24),
+        ],
+      ),
+    );
   }
 }

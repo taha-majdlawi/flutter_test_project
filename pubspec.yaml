@@ -20,3 +20,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/logo.png
+    - assets/icons/drawer.svg
+    - assets/images/drawer.png
