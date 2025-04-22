@@ -27,6 +27,11 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
           CustomOrderNumberText(orderNumber: 112096),
+          Row(
+            children: [
+              
+            ],
+          )
         ],
       ),
     );
