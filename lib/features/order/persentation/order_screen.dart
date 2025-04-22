@@ -7,7 +7,7 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(body: Column(children: [CustomAppBar()])));
+    return Scaffold(body: Column(children: [CustomAppBar()]));
   }
 }
 
@@ -16,14 +16,19 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 17.0),
-      child: Row(
-        children: [
-          Image.asset(AppAssets.drawer, width: 24, height: 24),
-          Image.asset(AppAssets.logo, width: 24, height: 24),
-        ],
-      ),
+    return Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 45.0, left: 17),
+          child: Image.asset(AppAssets.drawer, width: 31, height: 30),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 107.0, top: 50),
+          child: Image.asset(AppAssets.logo, width: 123, height: 123),
+        ),
+
+        Text('Oerder#')
+      ],
     );
   }
 }
