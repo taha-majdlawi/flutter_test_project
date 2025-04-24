@@ -50,17 +50,20 @@ class OrderInfoRightSide extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomTextWidget(text: 'Order #', style: Styles.purpleTextStyle16),
+        CustomTextWidget(text: 'Order #', style: Styles.blueTextStyle16),
         SizedBox(height: 25),
-        CustomTextWidget(text: 'Order Name', style: Styles.purpleTextStyle16),
+        CustomTextWidget(text: 'Order Name', style: Styles.blueTextStyle16),
         SizedBox(height: 25),
-        CustomTextWidget(text: 'Delivary Date', style: Styles.purpleTextStyle16),
+        CustomTextWidget(text: 'Delivary Date', style: Styles.blueTextStyle16),
         SizedBox(height: 25),
-        CustomTextWidget(text: 'Total Quantity', style: Styles.purpleTextStyle16),
+        CustomTextWidget(text: 'Total Quantity', style: Styles.blueTextStyle16),
         SizedBox(height: 25),
-        CustomTextWidget(text: 'Estimated Total', style: Styles.purpleTextStyle16),
+        CustomTextWidget(
+          text: 'Estimated Total',
+          style: Styles.blueTextStyle16,
+        ),
         SizedBox(height: 44),
-        CustomTextWidget(text: 'Location', style: Styles.purpleTextStyle16),
+        CustomTextWidget(text: 'Location', style: Styles.blueTextStyle16),
       ],
     );
   }
