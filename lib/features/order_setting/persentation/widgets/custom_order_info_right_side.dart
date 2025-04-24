@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test_project/core/utils/styles.dart';
 import 'package:flutter_test_project/core/widgets/custom_text_wiidget.dart';
@@ -14,24 +13,18 @@ class OrderInfoRightSide extends StatelessWidget {
         const CustomTextWidget(text: '122096', style: Styles.blueTextStyle16),
         const SizedBox(height: 25),
         const CustomTextWidget(
-          text: 'Order Name',
+          text: 'TAHA MAJDLAWI',
           style: Styles.blueTextStyle16,
         ),
         const SizedBox(height: 25),
         const CustomTextWidget(
-          text: 'Delivary Date',
+          text: 'May 4th 2025',
           style: Styles.blueTextStyle16,
         ),
         const SizedBox(height: 25),
-        const CustomTextWidget(
-          text: 'Total Quantity',
-          style: Styles.blueTextStyle16,
-        ),
+        const CustomTextWidget(text: '38', style: Styles.blueTextStyle16),
         const SizedBox(height: 25),
-        const CustomTextWidget(
-          text: 'Estimated Total',
-          style: Styles.blueTextStyle16,
-        ),
+        const CustomTextWidget(text: '1402.96', style: Styles.blueTextStyle16),
         const SizedBox(height: 44),
 
         const CustomTextWidget(
