@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_project/core/utils/app_router.dart';
 import 'package:flutter_test_project/core/utils/assets.dart';
+import 'package:flutter_test_project/core/utils/styles.dart';
 import 'package:flutter_test_project/features/order/persentation/widgets/custom_app_bar.dart';
 import 'package:flutter_test_project/features/order_setting/persentation/widgets/custom_app_bar.dart';
 import 'package:go_router/go_router.dart';
@@ -11,7 +12,15 @@ class OrderSettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [CustomOrderSettingScreenAppBar(), OrderInfo()]),
+      body: Column(
+        children: [
+          CustomOrderSettingScreenAppBar(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: OrderInfo(),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -30,19 +39,7 @@ class OrderInfoLeftSide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Order #',
-          style: TextStyle(
-            color: Color(0xff5000B9),
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-            fontFamily: 'Public Sans',
-          ),
-        ),
-      ],
-    );
+    return Column(children: [Text('Order #', style: Styles.textStyle14)]);
     ;
   }
 }
