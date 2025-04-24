@@ -6,6 +6,7 @@ import 'package:flutter_test_project/core/widgets/custom_text_wiidget.dart';
 import 'package:flutter_test_project/features/order/persentation/widgets/custom_app_bar.dart';
 import 'package:flutter_test_project/features/order_setting/persentation/widgets/custom_app_bar.dart';
 import 'package:flutter_test_project/features/order_setting/persentation/widgets/custom_order_info_left_side..dart';
+import 'package:flutter_test_project/features/order_setting/persentation/widgets/custom_order_info_right_side.dart';
 import 'package:go_router/go_router.dart';
 
 class OrderSettingScreen extends StatelessWidget {
@@ -37,33 +38,6 @@ class OrderInfo extends StatelessWidget {
         OrderInfoLeftSide(),
         const SizedBox(width: 30),
         OrderInfoRightSide(),
-      ],
-    );
-  }
-}
-
-class OrderInfoRightSide extends StatelessWidget {
-  const OrderInfoRightSide({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomTextWidget(text: 'Order #', style: Styles.blueTextStyle16),
-        SizedBox(height: 25),
-        CustomTextWidget(text: 'Order Name', style: Styles.blueTextStyle16),
-        SizedBox(height: 25),
-        CustomTextWidget(text: 'Delivary Date', style: Styles.blueTextStyle16),
-        SizedBox(height: 25),
-        CustomTextWidget(text: 'Total Quantity', style: Styles.blueTextStyle16),
-        SizedBox(height: 25),
-        CustomTextWidget(
-          text: 'Estimated Total',
-          style: Styles.blueTextStyle16,
-        ),
-        SizedBox(height: 44),
-        CustomTextWidget(text: 'Location', style: Styles.blueTextStyle16),
       ],
     );
   }
