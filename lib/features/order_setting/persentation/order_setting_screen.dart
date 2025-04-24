@@ -32,7 +32,36 @@ class OrderInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [OrderInfoLeftSide()]);
+    return Row(
+      children: [
+        OrderInfoLeftSide(),
+        const SizedBox(width: 30),
+        OrderInfoRightSide(),
+      ],
+    );
   }
 }
 
+class OrderInfoRightSide extends StatelessWidget {
+  const OrderInfoRightSide({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CustomTextWidget(text: 'Order #', style: Styles.textStyle16),
+        SizedBox(height: 25),
+        CustomTextWidget(text: 'Order Name', style: Styles.textStyle16),
+        SizedBox(height: 25),
+        CustomTextWidget(text: 'Delivary Date', style: Styles.textStyle16),
+        SizedBox(height: 25),
+        CustomTextWidget(text: 'Total Quantity', style: Styles.textStyle16),
+        SizedBox(height: 25),
+        CustomTextWidget(text: 'Estimated Total', style: Styles.textStyle16),
+        SizedBox(height: 44),
+        CustomTextWidget(text: 'Location', style: Styles.textStyle16),
+      ],
+    );
+  }
+}
