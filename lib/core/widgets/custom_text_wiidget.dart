@@ -6,6 +6,9 @@ class CustomTextWidget extends StatelessWidget {
   final TextStyle style;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text(
+      text,
+      style: style,
+    );
   }
 }
