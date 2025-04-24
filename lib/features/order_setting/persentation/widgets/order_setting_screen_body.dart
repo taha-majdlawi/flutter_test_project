@@ -24,7 +24,27 @@ class OrderSettingScreenBody extends StatelessWidget {
             style: Styles.blueTextStyle16,
           ),
         ),
+        CustomElevatedButton(),
       ],
+    );
+  }
+}
+
+class CustomElevatedButton extends StatelessWidget {
+  const CustomElevatedButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xff006B83), // Custom button color
+        ),
+        onPressed: () {},
+        child: Text('Submit', style: TextStyle(color: Colors.white)),
+        
+      ),
     );
   }
 }

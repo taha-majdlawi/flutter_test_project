@@ -1,8 +1,8 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test_project/core/utils/assets.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomOrderSettingScreenAppBar extends StatelessWidget {
   const CustomOrderSettingScreenAppBar({super.key});
@@ -27,7 +27,16 @@ class CustomOrderSettingScreenAppBar extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 25.0),
-                child: Image.asset(AppAssets.arrow_back, width: 24, height: 24),
+                child: GestureDetector(
+                  child: Image.asset(
+                    AppAssets.arrow_back,
+                    width: 24,
+                    height: 24,
+                  ),
+                  onTap: () {
+                    GoRouter.of(context).pop();
+                  },
+                ),
               ),
             ],
           ),
