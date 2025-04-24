@@ -9,6 +9,33 @@ class OrderSettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(children: [CustomAppBar()]));
+    return Scaffold(body: Column(children: [CustomAppBar(), OrderInfo()]));
+  }
+}
+
+class OrderInfo extends StatelessWidget {
+  const OrderInfo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        OrderInfoLeftSide(),
+      ],
+    );
+  }
+}
+
+
+class OrderInfoLeftSide extends StatelessWidget {
+  const OrderInfoLeftSide({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+          children: [
+
+          ],
+        );;
   }
 }
