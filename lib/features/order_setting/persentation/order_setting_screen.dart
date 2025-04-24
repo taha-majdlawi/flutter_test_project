@@ -25,17 +25,24 @@ class OrderInfo extends StatelessWidget {
   }
 }
 
-
-
 class OrderInfoLeftSide extends StatelessWidget {
   const OrderInfoLeftSide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-
-          ],
-        );
+    return Column(
+      children: [
+        Text(
+          'Order #',
+          style: TextStyle(
+            color: Color(0xff5000B9),
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            fontFamily: 'Public Sans',
+          ),
+        ),
+      ],
+    );
     ;
   }
 }
