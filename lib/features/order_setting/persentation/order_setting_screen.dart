@@ -16,29 +16,22 @@ class OrderSettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 44.0),
             child: CustomOrderSettingScreenAppBar(),
           ),
           Padding(padding: const EdgeInsets.all(20.0), child: OrderInfo()),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: const CustomTextWidget(
+              text: 'Delivery instructions ...',
+              style: Styles.blueTextStyle16,
+            ),
+          ),
         ],
       ),
-    );
-  }
-}
-
-class OrderInfo extends StatelessWidget {
-  const OrderInfo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        OrderInfoLeftSide(),
-        const SizedBox(width: 30),
-        OrderInfoRightSide(),
-      ],
     );
   }
 }
