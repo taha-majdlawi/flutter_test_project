@@ -37,13 +37,19 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0xff006B83), // Custom button color
+      child: SizedBox(
+        width: double.infinity,
+        height: 51,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xff006B83),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10), // 👈 Border radius here
+            ),
+          ),
+          onPressed: () {},
+          child: const Text('Submit', style: TextStyle(color: Colors.white)),
         ),
-        onPressed: () {},
-        child: Text('Submit', style: TextStyle(color: Colors.white)),
-        
       ),
     );
   }
