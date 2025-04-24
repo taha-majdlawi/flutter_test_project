@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/core/utils/app_router.dart';
 import 'package:flutter_test_project/core/utils/assets.dart';
 import 'package:flutter_test_project/core/widgets/order_number_text.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -31,7 +33,17 @@ class CustomAppBar extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 50.0),
                 child: Image.asset(AppAssets.cancel, width: 24, height: 24),
               ),
-              Image.asset(AppAssets.arrow_forword, width: 24, height: 24),
+              GestureDetector(
+                child: Image.asset(
+                  AppAssets.arrow_forword,
+                  width: 24,
+                  height: 24,
+                ),
+                onTap:
+                    () => GoRouter.of(
+                      context,
+                    ).push(AppRouter.kOrderSettingScreen),
+              ),
             ],
           ),
           Padding(

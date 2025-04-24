@@ -1,40 +1,25 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/features/order/persentation/order_screen.dart';
+import 'package:flutter_test_project/features/order_setting/persentation/order_setting_screen.dart';
 
 // ignore: depend_on_referenced_packages
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const kHomeView = '/homeView';
-  static const kDetailsView = '/detailsView';
-  static const kSearchView = '/searchView';
+  static const kOrderSettingScreen = '/OrderSettingScreen';
+
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const SplashScreen();
+          return const OrderScreen();
         },
       ),
       GoRoute(
-        path: kHomeView,
+        path: kOrderSettingScreen,
         builder: (BuildContext context, GoRouterState state) {
-          return const HomeScreen();
-        },
-      ),
-      GoRoute(
-        path: kDetailsView,
-        builder: (BuildContext context, GoRouterState state) {
-          return BlocProvider(
-            create: (context) => SimillarBookCubit(getIt.get<HomeRepoImpl>()),
-            child: BookDetailsScreen(book: state.extra as BookModle),
-          );
-        },
-      ),
-      GoRoute(
-        path: kSearchView,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SearchScreen();
+          return const OrderSettingScreen();
         },
       ),
     ],
