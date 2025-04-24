@@ -4,8 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_test_project/core/utils/assets.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomOrderSettingScreenAppBar extends StatelessWidget {
+  const CustomOrderSettingScreenAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
