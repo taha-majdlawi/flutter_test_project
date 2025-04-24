@@ -26,6 +26,13 @@ class OrderSettingScreenBody extends StatelessWidget {
           ),
         ),
         CustomElevatedButton(),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: const CustomTextWidget(
+            text: 'Save as draft',
+            style: Styles.blueTextStyle16,
+          ),
+        ),
       ],
     );
   }
