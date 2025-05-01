@@ -21,13 +21,13 @@ class _ProductClient implements ProductClient {
   String? baseUrl;
 
   @override
-  Future<Product> getProducts() async {
+  Future<Map<String, dynamic>> fetchRawProducts() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Product>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Map<String, dynamic>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -43,7 +43,8 @@ class _ProductClient implements ProductClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = Product.fromJson(_result.data!);
+   var value = _result.data!;
+
     return value;
   }
 
