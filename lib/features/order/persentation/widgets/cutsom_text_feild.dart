@@ -126,10 +126,16 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
               productTextFeildQuantity = value;
             },
             onTapOutside: (_) {
-              if (_quantityController.text.isEmpty) {
-                Helper.currentProductQuantityTextFeildIsEmpty = true;
-              } else {
+              if (_quantityController.text.isEmpty &&
+                  _productController.text.isEmpty) {
                 Helper.currentProductQuantityTextFeildIsEmpty = false;
+                Helper.currentProductNameTextFeildIsEmpty = false;
+              } else {
+                if (_quantityController.text.isEmpty) {
+                  Helper.currentProductQuantityTextFeildIsEmpty = true;
+                } else {
+                  Helper.currentProductQuantityTextFeildIsEmpty = false;
+                }
               }
             },
             decoration: InputDecoration(
@@ -149,10 +155,16 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
             link: _layerLink,
             child: TextField(
               onTapOutside: (_) {
-                if (_productController.text.isEmpty) {
-                  Helper.currentProductNameTextFeildIsEmpty = true;
-                } else {
+                if (_quantityController.text.isEmpty &&
+                    _productController.text.isEmpty) {
+                  Helper.currentProductQuantityTextFeildIsEmpty = false;
                   Helper.currentProductNameTextFeildIsEmpty = false;
+                } else {
+                  if (_productController.text.isEmpty) {
+                    Helper.currentProductNameTextFeildIsEmpty = true;
+                  } else {
+                    Helper.currentProductNameTextFeildIsEmpty = false;
+                  }
                 }
               },
               key: _textFieldKey,
