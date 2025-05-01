@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/core/utils/helper.dart';
 import 'package:flutter_test_project/features/order/data/models/product.dart';
 import 'package:flutter_test_project/features/order/data/repos/product_client.dart';
 import 'package:flutter_test_project/features/order/data/repos/product_clint_implemnt.dart';
 import 'package:dio/dio.dart';
 
 class CustomTextFeilds extends StatefulWidget {
-  const CustomTextFeilds({super.key});
-
+  const CustomTextFeilds({super.key, required this.index});
+  final int index;
   @override
   State<CustomTextFeilds> createState() => _CustomTextFeildsState();
 }
@@ -25,7 +26,7 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
 
   @override
   bool get wantKeepAlive => true;
-  
+
   @override
   void initState() {
     super.initState();
@@ -36,7 +37,9 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
         final quantityText = _quantityController.text.trim();
 
         if (productText.isEmpty && quantityText.isNotEmpty) {
-      
+          Helper.currentProductNameTextFeildIsEmpty = true;
+          Helper.currentProductQuantityTextFeildIsEmpty = false;
+          Helper.currentProductTextFeildsIndex = widget.index;
           Future.delayed(Duration.zero, () {
             FocusScope.of(context).requestFocus(_productFocus);
           });
@@ -50,7 +53,9 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
         }
 
         if (productText.isNotEmpty && quantityText.isEmpty) {
-
+          Helper.currentProductNameTextFeildIsEmpty = false;
+          Helper.currentProductQuantityTextFeildIsEmpty = true;
+          Helper.currentProductTextFeildsIndex = widget.index;
           Future.delayed(Duration.zero, () {
             FocusScope.of(context).requestFocus(_quantityFocus);
           });
@@ -63,6 +68,9 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
         final quantityText = _quantityController.text.trim();
 
         if (productText.isNotEmpty && quantityText.isEmpty) {
+          Helper.currentProductNameTextFeildIsEmpty = false;
+          Helper.currentProductQuantityTextFeildIsEmpty = true;
+          Helper.currentProductTextFeildsIndex = widget.index;
           Future.delayed(Duration.zero, () {
             FocusScope.of(context).requestFocus(_quantityFocus);
           });
@@ -76,6 +84,9 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
         }
 
         if (productText.isEmpty && quantityText.isNotEmpty) {
+          Helper.currentProductNameTextFeildIsEmpty = true;
+          Helper.currentProductQuantityTextFeildIsEmpty = false;
+          Helper.currentProductTextFeildsIndex = widget.index;
           Future.delayed(Duration.zero, () {
             FocusScope.of(context).requestFocus(_productFocus);
           });
@@ -91,6 +102,7 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
     _productFocus.dispose();
     _quantityFocus.dispose();
     _removeOverlay();
+
     super.dispose();
   }
 
@@ -99,7 +111,6 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
     super.build(context);
     return Row(
       children: [
-      
         Container(
           width: MediaQuery.of(context).size.width * 0.15,
           decoration: BoxDecoration(
@@ -114,6 +125,13 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
             onChanged: (value) {
               productTextFeildQuantity = value;
             },
+            onTapOutside: (_) {
+              if (_quantityController.text.isEmpty) {
+                Helper.currentProductQuantityTextFeildIsEmpty = true;
+              } else {
+                Helper.currentProductQuantityTextFeildIsEmpty = false;
+              }
+            },
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Color(0xff006B83), width: 1),
@@ -126,11 +144,17 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
           ),
         ),
 
-
         Expanded(
           child: CompositedTransformTarget(
             link: _layerLink,
             child: TextField(
+              onTapOutside: (_) {
+                if (_productController.text.isEmpty) {
+                  Helper.currentProductNameTextFeildIsEmpty = true;
+                } else {
+                  Helper.currentProductNameTextFeildIsEmpty = false;
+                }
+              },
               key: _textFieldKey,
               controller: _productController,
               focusNode: _productFocus,
@@ -158,7 +182,6 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
   }
 
   Future<void> _showOverlay() async {
-
     ProductClintImplemnt productClient = ProductClintImplemnt(
       productClient: ProductClient(
         Dio(),

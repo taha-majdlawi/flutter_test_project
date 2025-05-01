@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_project/core/utils/app_router.dart';
 import 'package:flutter_test_project/core/utils/assets.dart';
+import 'package:flutter_test_project/core/utils/helper.dart';
 import 'package:flutter_test_project/core/widgets/order_number_text.dart';
 import 'package:go_router/go_router.dart';
 
@@ -39,10 +40,19 @@ class CustomAppBar extends StatelessWidget {
                   width: 24,
                   height: 24,
                 ),
-                onTap:
-                    () => GoRouter.of(
-                      context,
-                    ).push(AppRouter.kOrderSettingScreen),
+                onTap: () {
+                  if (Helper.currentProductNameTextFeildIsEmpty == true ||
+                      Helper.currentProductQuantityTextFeildIsEmpty == true) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Row ${Helper.currentProductTextFeildsIndex+1} have some empty fields'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  } else {
+                    GoRouter.of(context).push(AppRouter.kOrderSettingScreen);
+                  }
+                },
               ),
             ],
           ),

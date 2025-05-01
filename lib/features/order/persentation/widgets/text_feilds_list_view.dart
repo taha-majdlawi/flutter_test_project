@@ -9,7 +9,7 @@ class TextFeildsListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView.builder(
-        itemBuilder: (context, index) => CustomTextFeilds(),
+        itemBuilder: (context, index) => CustomTextFeilds(index: index,),
       ),
     );
   }
