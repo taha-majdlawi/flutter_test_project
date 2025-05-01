@@ -22,9 +22,11 @@ class _CustomTextFeildsState extends State<CustomTextFeilds>
   final GlobalKey _textFieldKey = GlobalKey();
   List<String> _suggestions = [];
   String productTextFeildQuantity = '';
-  @override
+
   @override
   bool get wantKeepAlive => true;
+  
+  @override
   void initState() {
     super.initState();
 
